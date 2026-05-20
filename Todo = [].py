@@ -48,7 +48,7 @@ while show.lower() not in ("yes", "no"): #To enforce the user to say yes or no
 if show.lower() == "yes": #If yes, shows the list
     print("Your todo list: ", Todo)
 else: #If no, ends the program
-    print("Okay, have a great day!")
+    print("Okay!")
 
 #Asking the user if they want to add or delete until they say no
 add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No?").lower()
