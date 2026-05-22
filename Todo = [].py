@@ -1,4 +1,4 @@
-Todo = []
+Todo = [] 
 add = input("Enter your first task: ")
 Todo.append(add)
 print("Your todo list: ", Todo)
@@ -51,19 +51,19 @@ else: #If no, ends the program
     print("Okay!")
 
 #Asking the user if they want to add or delete until they say no
-add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No?").lower()
+add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or Done? ")
 add_delete = add_delete.lower()
 while add_delete not in ("add", "delete", "no"): #To enforce the user to say add, delete, or no
     print("Please enter Add, Delete, or No.")
-    add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ").lower()
+    add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ")
 while add_delete == "add": #If add, prompts to add another task to end of list + enforce the user to say add, delete, or no again, and proceeds until they say no
     add_more = input("What's next? ")
     Todo.append(add_more)
     print("Your todo list: ", Todo)
-    add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ").lower()
+    add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ")
     while add_delete not in ("add", "delete", "no"):
         print("Please enter Add, Delete, or No.")
-        add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ").lower()
+        add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ")
 while add_delete == "delete": #If delete, prompts to delete a task from the list + enforce the user to say add, delete, or no again, and proceeds until they say no
     which_one = input("Which one? ")
     if which_one in Todo: #specifically deletes a task from list and checks if empty
@@ -75,11 +75,11 @@ while add_delete == "delete": #If delete, prompts to delete a task from the list
             break
     else:  #checks is task is not in list
         print(which_one, "is not in your todo list.")
-    add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ")
-    while add_delete not in ("add", "delete", "no"):
-        print("Please enter Add, Delete, or No.")
-        add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or No? ")
-if add_delete == "no": #If no, show their entire list and end the program
+    add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or Done? ").lower()
+    while add_delete not in ("add", "delete", "done"):
+        print("Please enter Add, Delete, or Done")
+        add_delete = input("Do you need to add or delete something else on your todo list?  Add, Delete, or Done? ").lower()
+if add_delete.lower() == "done": #If done, show their entire list and end the program
     print("Okay, Here is your final todo list: ", Todo)
 
 
